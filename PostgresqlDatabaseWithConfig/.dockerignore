@@ -1,0 +1,33 @@
+# Build context exclusions (keeps `docker build` fast and image small)
+
+# Build output
+target/
+build/
+out/
+bin/
+
+# IDE / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# VCS / docs / CI
+.git/
+.gitignore
+.github/
+*.md
+
+# Tests reports & logs
+*.log
+logs/
+surefire-reports/
+
+# Local env
+.env
+.env.*
+
+# The Dockerfile itself doesn't need to be inside the image
+Dockerfile
+.dockerignore
