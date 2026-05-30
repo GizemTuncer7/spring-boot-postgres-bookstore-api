@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.data.domain.Persistable;
 
 @Data
@@ -22,6 +24,8 @@ public class BookEntity implements Persistable<String> {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "author_id")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private AuthorEntity authorEntity;
 
     @Transient
