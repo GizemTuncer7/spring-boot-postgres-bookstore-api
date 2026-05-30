@@ -1,6 +1,5 @@
 package com.example.PostgresqlDatabaseWithConfig.controlers;
 
-import ch.qos.logback.core.joran.spi.HttpUtil;
 import com.example.PostgresqlDatabaseWithConfig.TestDataUtil;
 import com.example.PostgresqlDatabaseWithConfig.domain.entities.AuthorEntity;
 import org.junit.jupiter.api.Test;
@@ -9,18 +8,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.http.MediaType;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.springframework.transaction.annotation.Transactional;
 import tools.jackson.databind.ObjectMapper;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
-@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 @AutoConfigureMockMvc
+@Transactional
 public class AuthorControllerIntegrationTests {
 
     private MockMvc mockMvc;
